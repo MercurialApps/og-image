@@ -160,14 +160,14 @@ const markdownOptions: DropdownOption[] = [
 const imageLightOptions: DropdownOption[] = [
   {
     text: "MercurialApps",
-    value: "https://og.mercurialapps.com/mercurialapps.png",
+    value: "https://og.mercurialapps.com/mercurialapps-light.png",
   },
 ];
 
 const imageDarkOptions: DropdownOption[] = [
   {
     text: "MercurialApps",
-    value: "https://og.mercurialapps.com/mercurialapps.png",
+    value: "https://og.mercurialapps.com/mercurialapps-dark.png",
   },
 ];
 
