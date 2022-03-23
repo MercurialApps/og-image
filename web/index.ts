@@ -158,11 +158,17 @@ const markdownOptions: DropdownOption[] = [
 ];
 
 const imageLightOptions: DropdownOption[] = [
-  { text: "MercurialApps", value: "https://og.mercurialapps.com/logo.png" },
+  {
+    text: "MercurialApps",
+    value: "https://og.mercurialapps.com/mercurialapps.png",
+  },
 ];
 
 const imageDarkOptions: DropdownOption[] = [
-  { text: "MercurialApps", value: "https://og.mercurialapps.com/logo.png" },
+  {
+    text: "MercurialApps",
+    value: "https://og.mercurialapps.com/mercurialapps.png",
+  },
 ];
 
 interface AppState extends ParsedRequest {
