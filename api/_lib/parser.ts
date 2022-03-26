@@ -5,10 +5,33 @@ import { ParsedRequest, Theme } from "./types";
 export function parseRequest(req: IncomingMessage) {
   console.log("HTTP " + req.url);
   const { pathname, query } = parse(req.url || "/", true);
-  const { fontSize, images, widths, heights, theme, md } = query || {};
+  const {
+    fontSize,
+    images,
+    widths,
+    heights,
+    theme,
+    md,
+    siteName,
+    desc,
+    siteNameFontSize,
+    descFontSize,
+  } = query || {};
 
   if (Array.isArray(fontSize)) {
     throw new Error("Expected a single fontSize");
+  }
+  if (Array.isArray(siteNameFontSize)) {
+    throw new Error("Expected a single siteNameFontSize");
+  }
+  if (Array.isArray(descFontSize)) {
+    throw new Error("Expected a single descFontSize");
+  }
+  if (Array.isArray(siteName)) {
+    throw new Error("Expected a single siteName");
+  }
+  if (Array.isArray(desc)) {
+    throw new Error("Expected a single desc");
   }
   if (Array.isArray(theme)) {
     throw new Error("Expected a single theme");
@@ -35,6 +58,10 @@ export function parseRequest(req: IncomingMessage) {
     images: getArray(images),
     widths: getArray(widths),
     heights: getArray(heights),
+    siteName: siteName || "",
+    desc: desc || "",
+    siteNameFontSize: siteNameFontSize || "50px",
+    descFontSize: descFontSize || "70px",
   };
   parsedRequest.images = getDefaultImages(
     parsedRequest.images,
