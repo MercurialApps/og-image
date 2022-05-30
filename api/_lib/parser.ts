@@ -89,7 +89,11 @@ function getDefaultImages(images: string[], theme: Theme): string[] {
   if (!images || !images[0]) {
     return [defaultImage];
   }
-  if (!images[0].startsWith("https://og.mercurialapps.com/")) {
+  if (
+    !images[0].startsWith(
+      "https://og-image-git-n3trader-mercurialapps.vercel.app/"
+    )
+  ) {
     images[0] = defaultImage;
   }
   return images;

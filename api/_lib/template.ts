@@ -168,24 +168,16 @@ export function getHtml(parsedReq: ParsedRequest) {
                 <div class="logo-wrapper">
                     ${images
                       .map((img, i) => {
-                        i === 0
+                        return i === 0
                           ? ""
                           : getPlusSignN3Trader(i) +
-                            getImage(img, widths[i], heights[i]);
+                              getImage(img, widths[i], heights[i]);
                       })
                       .join("")}
                 </div>
                 <div class="spacer">
                 <div class="heading">${emojify(
                   md ? marked(text) : sanitizeHtml(text)
-                )}
-                </div>
-                <div class="heading2">${emojify(
-                  md ? marked(siteName) : sanitizeHtml(siteName)
-                )}
-                </div>
-                <div class="heading3">${emojify(
-                  md ? marked(desc) : sanitizeHtml(desc)
                 )}
                 </div>
             </div>
