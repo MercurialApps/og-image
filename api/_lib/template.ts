@@ -83,6 +83,15 @@ function getCss(
         justify-items: center;
     }
 
+    .trade-item-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+  }
+
     .logo {
         margin: 0 75px;
     }
@@ -165,7 +174,8 @@ export function getHtml(parsedReq: ParsedRequest) {
                 <div class="logo-wrapper">
                     ${getImage(images[0], widths[0], heights[0])}
                 </div>
-                <div class="logo-wrapper">
+                <div class="spacer">
+                <div class="trade-item-wrapper">
                     ${images
                       .map((img, i) => {
                         return i === 0
