@@ -149,6 +149,50 @@ export function getHtml(parsedReq: ParsedRequest) {
     siteName,
     siteNameFontSize,
   } = parsedReq;
+
+  if (siteName === "N3 Trader") {
+    return `<!DOCTYPE html>
+    <html>
+        <meta charset="utf-8">
+        <title>Generated Image</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            ${getCss(theme, fontSize, siteNameFontSize, descFontSize)}
+        </style>
+        <body>
+            <div>
+                <div class="spacer">
+                <div class="logo-wrapper">
+                    ${getImage(images[0], widths[0], heights[0])}
+                </div>
+                <div class="logo-wrapper">
+                    ${images
+                      .map((img, i) => {
+                        i === 0
+                          ? ""
+                          : getPlusSignN3Trader(i) +
+                            getImage(img, widths[i], heights[i]);
+                      })
+                      .join("")}
+                </div>
+                <div class="spacer">
+                <div class="heading">${emojify(
+                  md ? marked(text) : sanitizeHtml(text)
+                )}
+                </div>
+                <div class="heading2">${emojify(
+                  md ? marked(siteName) : sanitizeHtml(siteName)
+                )}
+                </div>
+                <div class="heading3">${emojify(
+                  md ? marked(desc) : sanitizeHtml(desc)
+                )}
+                </div>
+            </div>
+        </body>
+    </html>`;
+  }
+
   return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -198,4 +242,8 @@ function getImage(src: string, width = "auto", height = "225") {
 
 function getPlusSign(i: number) {
   return i === 0 ? "" : '<div class="plus">+</div>';
+}
+
+function getPlusSignN3Trader(i: number) {
+  return i === 1 ? "" : '<div class="plus">+</div>';
 }
