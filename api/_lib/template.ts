@@ -159,7 +159,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     siteNameFontSize,
   } = parsedReq;
 
-  if (siteName === "N3TraderListing") {
+  if (siteName === "N3TraderListing" || siteName === "N3TraderTrade") {
     return `<!DOCTYPE html>
     <html>
         <meta charset="utf-8">
