@@ -16,6 +16,7 @@ export function parseRequest(req: IncomingMessage) {
     desc,
     siteNameFontSize,
     descFontSize,
+    more,
   } = query || {};
 
   if (Array.isArray(fontSize)) {
@@ -35,6 +36,9 @@ export function parseRequest(req: IncomingMessage) {
   }
   if (Array.isArray(theme)) {
     throw new Error("Expected a single theme");
+  }
+  if (Array.isArray(more)) {
+    throw new Error("Expected a single desc");
   }
 
   const arr = (pathname || "/").slice(1).split(".");
@@ -62,6 +66,7 @@ export function parseRequest(req: IncomingMessage) {
     desc: desc || "",
     siteNameFontSize: siteNameFontSize || "50px",
     descFontSize: descFontSize || "70px",
+    more: more || "",
   };
   parsedRequest.images = getDefaultImages(
     parsedRequest.images,

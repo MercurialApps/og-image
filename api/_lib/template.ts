@@ -157,6 +157,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     descFontSize,
     siteName,
     siteNameFontSize,
+    more,
   } = parsedReq;
 
   if (siteName === "N3TraderListing" || siteName === "N3TraderTrade") {
@@ -184,6 +185,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                               getImage(img, widths[i], heights[i]);
                       })
                       .join("")}
+                      ${more === "true" ? `<p>and more!</p>` : ``}
                 </div>
                 <div class="spacer">
                 <div class="heading">${emojify(

@@ -14,4 +14,5 @@ export interface ParsedRequest {
   desc: string;
   siteNameFontSize: string;
   descFontSize: string;
+  more: string;
 }
