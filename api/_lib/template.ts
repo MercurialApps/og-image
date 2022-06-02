@@ -102,6 +102,12 @@ function getCss(
         font-size: 100px;
     }
 
+    .more {
+      color: #BBB;
+      font-family: Times New Roman, Verdana;
+      font-size: 50px;
+  }
+
     .spacer {
         margin: 50px;
     }
@@ -190,7 +196,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                       .join("")}
                       ${
                         more === "true"
-                          ? `<div class="plus">and more!</div>`
+                          ? `<div class="more">and more!</div>`
                           : ``
                       }
                 </div>
