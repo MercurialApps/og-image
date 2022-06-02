@@ -160,6 +160,8 @@ export function getHtml(parsedReq: ParsedRequest) {
     more,
   } = parsedReq;
 
+  const ImagesLimit = 4;
+
   if (siteName === "N3TraderListing" || siteName === "N3TraderTrade") {
     return `<!DOCTYPE html>
     <html>
@@ -178,6 +180,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                 <div class="spacer">
                 <div class="trade-item-wrapper">
                     ${images
+                      .slice(0, ImagesLimit)
                       .map((img, i) => {
                         return i === 0
                           ? ""
@@ -214,6 +217,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             <div class="spacer">
             <div class="logo-wrapper">
                 ${images
+                  .slice(0, ImagesLimit)
                   .map(
                     (img, i) =>
                       getPlusSign(i) + getImage(img, widths[i], heights[i])
