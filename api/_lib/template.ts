@@ -185,7 +185,11 @@ export function getHtml(parsedReq: ParsedRequest) {
                               getImage(img, widths[i], heights[i]);
                       })
                       .join("")}
-                      ${more === "true" ? `<p>and more!</p>` : ``}
+                      ${
+                        more === "true"
+                          ? `<div class="plus">and more!</div>`
+                          : ``
+                      }
                 </div>
                 <div class="spacer">
                 <div class="heading">${emojify(
